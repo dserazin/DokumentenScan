@@ -18,5 +18,5 @@ Dieses Programm, wird zentral mit zusätzlichen Übergabeparametern, welche aus 
 Dafür ist eine eingerichtete Datenbank vorgesehen, welche die Patientendaten und die Art der gewählten Dokumentation speichert sowie abfragt. 
 Die Anwendung wird auf einem Server abgelegt, welcher für jeden Client erreichbar ist. 
 Um Barcodes erstellen zu können, wird der verwendete EtikettenDrucker so angesprochen, dass eine Geräteauswahl vor jedem Druck zu vermieden ist. 
-Zur Druckeridentifizierung wird ein bestimmtes Merkmal verwendet, welches über einen Kommentar als Bsp. LABETI in den Geräteeigenschaften des EtiDruckers abgespeichert wird. 
-Der Druck des Barcodes wird an den dafür vorkonfigurierten Netzwerkdrucker gesendet, welcher über das Anmeldeskript festgelegt wird. 
+Zur Druckeridentifizierung wird ein bestimmtes Merkmal verwendet, welches über einen Kommentar als Bsp. LABETI in den Geräteeigenschaften des EtiDruckers abgespeichert. 
+Der Druck des Barcodes wird an den dafür vorkonfigurierten Netzwerkdrucker, der über ein Anmeldeskript festgelegt ist, gesendet. 
