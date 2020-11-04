@@ -10,13 +10,13 @@ Durch diese Erweiterungen soll eine zeitlich effizientere Arbeitsweise der Anwen
 + Die Daten können über festgelegte Optionen ausgewählt und als Barcode ausgegeben werden.
 + Die Oberfläche zur Erstellung des Barcodes ist im Informationszentrum integriert und wird innerhalb der klinischen Dokumente 
 über Auswahl der Vorlagen aufgerufen.
-+ Mit dieser Anwendung sollen Zeitersparnis, Kostenersparnis und gesteigerte Effizienz (schnellerer Aufruf der Anwendung, 
-leicht Erweiterbar durch dynamischen Aufbau der Anwendung über XML.config (Programm gliedert sich zur Laufzeit), 
-mehrere Barcode Aufträge in einem durchlauf realisierbar) erreicht werden.
++ Durch diese Anwendung wird Zeitersparnis, Kostenersparnis und gesteigerte Effizienz(schnellerer Aufruf der Anwendung) erreicht. 
+Das Programm ist leicht Erweiterbar durch einen dynamischen Aufbau mit Hilfe von XML.config(Programm gliedert sich zur Laufzeit). 
+Mehrere Barcode Aufträge sind in einem durchlauf realisierbar.
 
-Dieses Programm, wird zentral mit zusätzlichen Übergabeparametern, welche aus Vorname, Nachname,geb.Datum und Patientennummer bestehen gestartet. 
-Dafür ist eine eingerichtete Datenbank vorgesehen, um die Patientendaten und die Art der gewählten Dokumentation zu speichern, sowie abzufragen. 
-Die Anwendung soll auf einem Server abgelegt werden auf das jeder Client zugreifen kann. 
-Um Barcodes erstellen zu können soll der verwendete EtikettenDrucker so angesprochen werden, dass eine Geräteauswahl vor jedem Druck vermieden wird. 
-Dazu wird ein bestimmtes Merkmal, welches über einen Kommentar als Bsp. LABETI abgespeichert ist und der Druckeridentifizierung dient, verwendet werden. 
+Dieses Programm, wird zentral mit zusätzlichen Übergabeparametern, welche aus Vorname, Nachname, geb.Datum und Patientennummer bestehen gestartet. 
+Dafür ist eine eingerichtete Datenbank vorgesehen, welche die Patientendaten und die Art der gewählten Dokumentation speichert sowie abfragt. 
+Die Anwendung wird auf einem Server abgelegt, welcher für jeden Client erreichbar ist. 
+Um Barcodes erstellen zu können, wird der verwendete EtikettenDrucker so angesprochen, dass eine Geräteauswahl vor jedem Druck zu vermieden ist. 
+Zur Druckeridentifizierung wird ein bestimmtes Merkmal verwendet, welches über einen Kommentar als Bsp. LABETI in den Geräteeigenschaften des EtiDruckers abgespeichert wird. 
 Der Druck des Barcodes wird an den dafür vorkonfigurierten Netzwerkdrucker gesendet, welcher über das Anmeldeskript festgelegt wird. 
