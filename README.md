@@ -2,7 +2,7 @@
 Desktopanwendung zur dezentralen Erstellung von Barcodeetiketten.
 
 Der Funktionsumfang der Software beinhaltet folgende Punkte:
-+	Schnellerer Zugriff des Programms durch Einbindung in die Patientenfallakte des Abkürzungsverzeichnis
++	Schnellerer Zugriff des Programms durch Einbindung in die Patientenfallakte
 + Implementierung eines Warenkorb-Systems zur Stapelverarbeitung von Barcodes
 +	Vereinfachte Administration durch Konfigurationsdateien
 
