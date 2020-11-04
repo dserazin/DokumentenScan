@@ -1,0 +1,14 @@
+﻿<Window x:Class="DScan.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        xmlns:local="clr-namespace:DScan"
+        mc:Ignorable="d"
+        Title="Info" Height="502" Width="821" ResizeMode="CanResize" 
+        x:Name="miniwindow">
+    <Grid>
+        <Image gif:AnimationBehavior.SourceUri="images/Info.gif" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" Height="463" Width="805"  />
+    </Grid>
+</Window>

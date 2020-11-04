@@ -1,0 +1,63 @@
+﻿<Window WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Printing="clr-namespace:System.Drawing.Printing;assembly=System.Drawing"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" 
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        x:Class="DScan.MainWindow"
+        mc:Ignorable="d"
+        Title ="Augusta DokumentenScan" Icon="images/favicon.ico" FontSize="15"  MinHeight="717.144" MinWidth="1200.661" Background="#FFB4B4FD"  ForceCursor="True" ResizeMode="CanResize" Height="657.144" Width="1135">
+    <Grid  Margin="0,49,2,154" Background="#FFCFD0FE">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="84*"/>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="371*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="134*"/>
+            <ColumnDefinition Width="392*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl x:Name="tcBehandlungen"   Margin="17,69,242,-91" Grid.ColumnSpan="8"  VerticalAlignment="Stretch" >
+        </TabControl>
+        <!-- BUTTON = Ausdruck der Etiketten mit entsprechendem Barcode_______________________________________________________-->
+        <Button x:Name="BarcodeButton" ToolTip="Erstelle Barcode" VerticalAlignment="Bottom"  Background="Lavender"
+                 Margin="0,0,30,-74" Height="58" Width="188"  Cursor="Hand"  
+                 FontSize="26"  Click="Button_Click" ClickMode="Press" Grid.Column="7" HorizontalAlignment="Right" Foreground="#FFA31C56">
+            <WrapPanel HorizontalAlignment="Center" Width="222">
+                <Image Height="66" Source="images/trans4.png"  Width="220"/>
+            </WrapPanel>
+        </Button>
+        <!-- Image LOGO DOKUSCAN-->
+        <Image Source="images/aertju3.png" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-46,19,0"  Stretch="Fill" Grid.Column="7" Width="364" Height="114"/>
+        <!-- ListBox AUSWAHL AUS CHECKBOXEN -->
+        <ListBox x:Name="lb_Auswahl" SelectionMode="Extended" Foreground="DarkBlue" Background="Lavender" Grid.Column="7" Width="228" Margin="0,95,15,-1" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
+        <!-- TextBlock ÜBERGABE-PARAMETER -->
+        <TextBlock HorizontalAlignment="Left" x:Name="tbxVorname" TextWrapping="Wrap" FontSize="20" FontWeight="Bold" Foreground="DarkBlue" VerticalAlignment="Top" Width="160" Height="51" Margin="0,13,0,0" Grid.Column="4"/>
+        <TextBlock HorizontalAlignment="Left" x:Name="tbxNachname" TextWrapping="Wrap" FontSize="20" FontWeight="Bold" Foreground="DarkBlue" VerticalAlignment="Top" Width="187" Height="51" Margin="165,13,0,0" Grid.Column="4"/>
+        <TextBlock HorizontalAlignment="Left" x:Name="tbxGeburtstag" TextWrapping="Wrap"  FontSize="15" Foreground="Navy" VerticalAlignment="Top" Width="84" Height="29" Margin="10,10,0,0" Grid.Column="5" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" x:Name="tbxJahre" TextWrapping="Wrap" FontSize="15" Foreground="Navy" VerticalAlignment="Top" Height="29" Width="86" Margin="39,10,0,0" Grid.Column="6"/>
+        <TextBlock HorizontalAlignment="Left" x:Name="tbxFallNummer" TextWrapping="Wrap"  FontSize="15" Foreground="Navy" VerticalAlignment="Top" Width="150" Height="30" Margin="10,39,0,0" Grid.Column="5" Grid.ColumnSpan="2"/>
+        <!-- Label AUSWAHL UND ENTFERNEN-->
+        <Label x:Name="label" Content="   Auswahl ⮯ " Foreground="Lavender" FontWeight="Bold" Background="#CFD0FE" FontSize="16" Grid.Column="7" HorizontalAlignment="Right" Margin="0,67,60,0" VerticalAlignment="Top" Width="196" Height="27"/>
+        <Label x:Name="label2" Content="       entf.→ " Foreground="#CFD0FE"  Background="#CFD0FE" FontSize="16" Grid.Column="7" HorizontalAlignment="Right" Margin="0,67,40,0" VerticalAlignment="Top" Width="90" Height="27"/>
+        <!-- Button REMOVE AUSWAHL -->
+        <Button x:Name="RemoveAuswahl" ToolTip="Markierung löschen" Grid.Column="7" HorizontalAlignment="Right" Height="29"  Width="30" Margin="0,67,15,0" VerticalAlignment="Top" Background="Lavender" Foreground="Lavender" Click="RemoveCheckBoxes_Click" >
+            <WrapPanel HorizontalAlignment="Center" Width="38">
+                <Image Height="26" Source="images/ref1.png" Stretch="None" Width="38" RenderTransformOrigin="0.5,0.5"/>
+            </WrapPanel>
+        </Button>
+        <!--<ComboBox Name="cmbPrinterSelection"  Grid.Column="6" HorizontalAlignment="Right"  Height="36" Margin="147,439,15,0" VerticalAlignment="Bottom" Width="227" ItemsControl.ItemsSource="{x:Static Printing:PrinterSettings.InstalledPrinters}" SelectionChanged="cmbPrinterSelection_SelectionChanged"/>-->
+        <!--Button INFOBOX-->
+        <Button Name="infoBox" ToolTip="Info" HorizontalAlignment="Left" Margin="17,-36,0,0" VerticalAlignment="Top" Width="25" Height="23" RenderTransformOrigin="0.5,0.5" Click="InfoBox_Click" Grid.ColumnSpan="2" ClickMode="Hover" >
+            <WrapPanel HorizontalAlignment="Center" >
+                <Image Source="images/hic.png" />
+            </WrapPanel>
+        </Button>
+        <!-- Label UHRZEIT UNTEN LINMKS -->
+        <Label x:Name="lbDatum" Content="{x:Static sys:DateTime.Now}" ContentStringFormat="dd.MM.yyyy, 10:00'Uhr             © by Daniel Serazin Augusta-Kranken-Anstalt 2019-2020'" Foreground="White"  FontSize="15" Opacity="0.75" HorizontalAlignment="Left" Height="35" Margin="17,0,0,-138" VerticalAlignment="Bottom" Grid.ColumnSpan="7" Width="773"/>
+
+    </Grid>
+</Window>

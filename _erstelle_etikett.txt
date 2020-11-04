@@ -1,0 +1,61 @@
+﻿<?php
+header("Content-Type: text/html; charset=iso-8859-1");
+$maxlen = 30;
+if(
+	isset($_GET['doctype']) && 
+	isset($_GET['patname']) && 
+	isset($_GET['birthd']) && 
+	isset($_GET['barcodetext']) && 
+	isset($_GET['pat'])
+  ){
+	
+	$retAr = array();
+	$retAr[0] = "000";
+	$retAr[1] = substr($_GET['doctype'], 0, $maxlen);
+	$retAr[2] = substr($_GET['docid'], 0, $maxlen);
+	$retAr[3] = substr($_GET['pat'], 0, $maxlen);
+	$retAr[4] = replace_umlauts(substr($_GET['patname'], 0, $maxlen));
+	$retAr[5] = replace_umlauts(substr($_GET['barcodetext'], 0, $maxlen));
+	$retAr[6] = substr($_GET['birthd'], 0, $maxlen);
+
+	
+	$retval  = "^Q25,3" . "\n";
+	$retval .= "^W40" . "\n";
+	$retval .= "^H10" . "\n";
+	$retval .= "^S1" . "\n";
+	$retval .= "^P1" . "\n";
+	$retval .= "^E14" . "\n";
+	$retval .= "^C1" . "\n";
+	$retval .= "^O0" . "\n";
+	$retval .= "^L" . "\n";
+	$retval .= "AB,14,190,1,1,0,3,".$retAr[4]."\n";
+	$retval .= "AB,38,190,1,1,0,3,".$retAr[5]."\n";
+	$retval .= "AA,66,190,1,1,0,3,Geburtsdatum\n";
+	$retval .= "AB,80,190,1,1,0,3,".$retAr[6]."\n";
+
+	$retval .= "AA,104,190,1,1,0,3,Abnahmedatum\n";
+	$retval .= "AB,118,190,1,1,0,3,".date("d.m.y", time())."\n";
+
+	$retval .= "AA,140,190,1,1,0,3,Fallnummer\n";
+	$retval .= "AB,154,190,1,1,0,3,".$retAr[3]."\n";
+	$retval .= "BN,200,195,2,6,100,3,0," . $retAr[3] . "\n";
+
+	$retval .= "E" . "\n";
+	
+}else{
+	$retval = "FALSE";
+}
+
+function replace_umlauts($str) {
+	$str = str_replace("ä", "ae", $str);
+	$str = str_replace("ö", "oe", $str);
+	$str = str_replace("ü", "ue", $str);
+	$str = str_replace("ß", "ss", $str);
+	$str = str_replace("Ä", "Ae", $str);
+	$str = str_replace("Ö", "Oe", $str);
+	$str = str_replace("Ü", "Ue", $str);
+	return $str;
+}
+
+echo $retval;
+?>

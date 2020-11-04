@@ -1,0 +1,6 @@
+[ODBC]
+DRIVER=MySQL ODBC 8.0 Unicode Driver
+UID=scanpdf
+PORT=3306
+DATABASE=mirth
+SERVER=128.20.100.114
