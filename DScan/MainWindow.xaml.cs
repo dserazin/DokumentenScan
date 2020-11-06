@@ -367,7 +367,7 @@ namespace DScan
         {
             Window1 picInfo = new Window1();
             picInfo.Show();
-            
+
             //picInfo.Close();
             //MessageBox.Show("                © by Daniel Serazin\n Augusta-Kranken-Anstalt Bochum gGmbH\n                        2019-2020 ");
         }
